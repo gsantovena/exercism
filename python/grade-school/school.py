@@ -20,6 +20,7 @@ class School(object):
         return sorted((grade, tuple(sorted(students)))
             for grade, students in self.db.items())
 
+
 if __name__ == '__main__':
     school = School("Haleakala Hippy School")
 
