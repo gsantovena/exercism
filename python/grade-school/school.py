@@ -17,11 +17,8 @@ class School(object):
             return set()
 
     def sort(self):
-        s = {}
-        for k in sorted(self.db):
-            s[k] = set(sorted(self.db[k]))
-
-        return list(s.items() if hasattr(s, "items") else s)
+        return sorted((grade, tuple(sorted(students)))
+            for grade, students in self.db.items())
 
 if __name__ == '__main__':
     school = School("Haleakala Hippy School")
